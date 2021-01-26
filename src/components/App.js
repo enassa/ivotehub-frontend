@@ -1,9 +1,9 @@
  // resources/assets/js/components/App.js
 
-import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
-import "./css/nathan.css";
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+ import React, { Component } from 'react'
+ import ReactDOM from 'react-dom'
+ import "../components/css/nathan.css";
+ import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import Home from './pages/home/Home'
 import Verification from './pages/verification/verification'
 import rootReducer from './reducers/allReducers'
@@ -21,6 +21,7 @@ const store = createStore(rootReducer)
       <Provider store={store}>
           <BrowserRouter>
               <Switch>
+                  <Route exact path="/" component={Verification} />
                   <Route exact path="/student-details" component={Home} />
                   <Route exact path="/voting-page" component={Home} />
                   <Route exact path="/success-page" component={Home} />
@@ -28,7 +29,6 @@ const store = createStore(rootReducer)
                   <Route exact path="/hh454j5hg34h5g4" component={Home} />
                   <Route path="/:page/:sub_page" component={Verification} />
                   <Route path="/:page" component={Verification} />
-                  <Route exact path="/" component={Verification} />
                   <Route exact path="*" component={Home} />
               </Switch>
           </BrowserRouter>
@@ -37,4 +37,4 @@ const store = createStore(rootReducer)
    }
  }
 
-export default App;
+ ReactDOM.render(<App />, document.getElementById('app'))
