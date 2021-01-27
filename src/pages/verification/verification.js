@@ -46,7 +46,7 @@ class Verification  extends Component {
         }else{
             this.verifying();
             let currentEndPoint = this.state.userInputs;
-            axios.get(`https://desolate-eyrie-58648.herokuapp.com/api/voters/${currentEndPoint}`)
+            axios.get(`https://murmuring-bastion-95773.herokuapp.com/api/voters/${currentEndPoint}`)
             .then(resp => {
                 if(resp.status==200){
                     this.VerificationSuccess()
