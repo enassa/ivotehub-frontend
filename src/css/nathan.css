@@ -41,9 +41,7 @@ body{
     height: 100%;
 }
 
-:root{
-    --zindex:1;
-} */
+*/
 
 /* Tweaks */
 
@@ -153,11 +151,14 @@ body{
 .half-width{
     width: 50%;
 }*/
+:root{
+    --zindex:1;
+} 
 .put-on-top{
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index:calc(var(--zindex)+1)
+    z-index:calc(var(--zindex)+1);
 }
 .put-under{
     position: relative;
