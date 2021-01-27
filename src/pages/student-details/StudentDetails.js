@@ -84,6 +84,7 @@ class StudentDetails  extends Component {
                 votes:[],
                 currentEndPoint:1,
                 votesLength:0,
+                numberOfVotes:5
          };
     }
      ejectContestants(contestantObject){
@@ -162,8 +163,16 @@ class StudentDetails  extends Component {
                    if(resp.status == 200){
                     this.setState({activatedOption:this.state.activatedOption + 1}, ()=>{
                         this.setState({currentEndPoint:this.state.currentEndPoint + 1}, ()=>{
-                            this.getData()
-                            console.log(resp)
+                            if(this.state.numberOfVotes==1){
+                                window.location.replace("https://desolate-eyrie-58648.herokuapp.com/")
+                            }
+                            else{
+                                this.setState({numberOfVotes:this.state.numberOfVotes-1}, ()=>{
+                                    console.log(resp)
+                                    this.getData()
+                                    
+                                })
+                            }
                         })
                     })
                    }

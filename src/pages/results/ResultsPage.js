@@ -128,7 +128,7 @@ class ResponsiveDrawer  extends Component {
    }
    else{
       this.setState({loading:true})
-      axios.get(`https://murmuring-bastion-95773.herokuapp.com/api/contestants/${group}`)
+      axios.get(`https://murmuring-bastion-95773.herokuapp.com/contestants/${group}`)
       .then(resp => {
             this.setState({resultsList:resp.data.slice(0,5), loading:false})
       })
