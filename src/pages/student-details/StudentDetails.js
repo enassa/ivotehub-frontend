@@ -94,7 +94,7 @@ class StudentDetails  extends Component {
       };
       getData(){
         this.setState({loading:true})
-        axios.get(`http://localhost:8000/api/contestants/${this.state.currentEndPoint}`)
+        axios.get(`https://murmuring-bastion-95773.herokuapp.com/api/contestants/${this.state.currentEndPoint}`)
                .then(resp => {
                      this.setState({contestantsLists:resp.data.slice(0,5), loading:false})
                     //  this.setState({activatedOption:this.state.activatedOption + 1})
@@ -108,7 +108,7 @@ class StudentDetails  extends Component {
     }
     sendVotes(){
         this.setState({votesLength:this.state.votesLength-1}, ()=>{
-            axios.put(`http://localhost:8000/api/contestants/${this.state.currentEndPoint}`)
+            axios.put(`https://murmuring-bastion-95773.herokuapp.com/api/contestants/${this.state.currentEndPoint}`)
                .then(resp => {
                     this.getData();
                     console.log(resp)
@@ -157,7 +157,7 @@ class StudentDetails  extends Component {
     // }
     registerVote(contestantsId,voteGroup){
         // console.log(contestantsId,voteGroup)
-            axios.put(`http://localhost:8000/api/contestants/${contestantsId}`)
+            axios.put(`https://murmuring-bastion-95773.herokuapp.com/api/contestants/${contestantsId}`)
                .then(resp => {
                    if(resp.status == 200){
                     this.setState({activatedOption:this.state.activatedOption + 1}, ()=>{
@@ -180,7 +180,7 @@ class StudentDetails  extends Component {
             this.getData()
           }
           else{
-            window.location.replace("http://localhost:3000")
+            window.location.replace("https://desolate-eyrie-58648.herokuapp.com/")
           }
     }
     render() { 
