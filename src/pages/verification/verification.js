@@ -33,7 +33,7 @@ class Verification  extends Component {
         this.setState({verifying:false})
         localStorage.setItem('verificationStatus', "yes")
         console.log(localStorage.verificationStatus)
-        window.location.replace("http://localhost:3000/hh454j5hg34h5g4")
+        window.location.replace("https://desolate-eyrie-58648.herokuapp.com/hh454j5hg34h5g4")
     }
     verifying(){
         this.setState({verifying:true})
@@ -46,7 +46,7 @@ class Verification  extends Component {
         }else{
             this.verifying();
             let currentEndPoint = this.state.userInputs;
-            axios.get(`http://localhost:8000/api/voters/${currentEndPoint}`)
+            axios.get(`https://desolate-eyrie-58648.herokuapp.com/api/voters/${currentEndPoint}`)
             .then(resp => {
                 if(resp.status==200){
                     this.VerificationSuccess()
