@@ -48,7 +48,7 @@ body{
 /* Tweaks */
 
 /* Flex-styles */
-.d-flex{
+/* .d-flex{
     display: flex;
 }
 .grid-view{
@@ -63,7 +63,6 @@ body{
     justify-content: flex-start !important;
     flex-flow: row !important;
     flex-wrap: wrap !important;
-    /* overflow-y: scroll !important; */
 }
 .f-column{
     display: flex;
@@ -121,14 +120,12 @@ body{
     background-color: #F6F6F6;
     padding: 2px;
     padding-right: 10px;
-    /* padding-right: 5px; */
     overflow: hidden;
     max-width: 97%;
     color:#2f3337;
     border-radius: 10px;
     font-size: 80%;
 }
-/*div expansion styles */
 .fill-entire-page{
     width: 100%;
     height: 100%;
@@ -170,7 +167,7 @@ body{
 }
 .wrap-around{
     display: inline-flex;
-}
+} */
 /* Some cool colors */
 .nate-blue-bg{
     background-color:#1976D2;
