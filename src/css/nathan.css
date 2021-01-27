@@ -158,13 +158,13 @@ body{
     position: absolute;
     width: 100%;
     height: 100%;
-    z-index:calc(var(--zindex)+1);
+    /* z-index:calc(var(--zindex)+1); */
 }
 .put-under{
     position: relative;
     width: 100%;
     height: 100%;
-    z-index:var(--zindex);
+    /* z-index:var(--zindex); */
 }
 .wrap-around{
     display: inline-flex;
