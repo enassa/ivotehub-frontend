@@ -62,7 +62,6 @@ class Verification  extends Component {
                 console.error(err);
             });
         }
-       
     }
     render() { 
         
