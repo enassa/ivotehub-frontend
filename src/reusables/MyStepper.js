@@ -28,9 +28,13 @@ function getSteps() {
   return [
     'Boys Prefect', 
     'Girls Prefect', 
-    'Sanctions Prefect',
-    'Dinning Hall West',
-    'Dinning Hall East'];
+    'Entertainment Prefect',
+    'Dinning Hall Boys (East and West)',
+    'Dinning Hall Girls (East and West)',
+    'Sanctions Prefect Boys (East and West)',
+    'Sanctions Prefect Girls (East and West)',
+    
+  ];
 }
 
 function getStepContent(stepIndex) {
@@ -42,13 +46,19 @@ function getStepContent(stepIndex) {
       return 'Choose your Girls Prefect';
       break;
     case 2:
-      return 'Choose your Sanctions Prefect';
+      return 'Choose your Entertainment Prefect';
       break;
     case 3:
-      return 'Choose your Dinning Hall Prefect for East';
+      return 'Choose your Dinning Hall Boys Prefect';
       break;
     case 4:
-      return 'Choose your Dinning Hall Prefect for West';
+      return 'Choose your Dinning Hall Girls Prefect';
+      break;
+    case 5:
+      return 'Choose your Sanctions Boys Prefect';
+      break;
+    case 6:
+      return 'Choose your Sanctions Girls Prefect';
       break;
     default:
       return '';

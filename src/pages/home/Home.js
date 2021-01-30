@@ -3,6 +3,7 @@ import { BrowserRouter, Router } from 'react-router-dom';
 import StudentDetails from '../student-details/StudentDetails'
 // import Verification from './pages/verification';
 import ResponsiveDrawer from "../results/ResultsPage"
+import SuccessPage from "../success-page/Success"
 // import ResultsPage from '../results/Results';
 class Home extends Component {
     constructor(props) {
@@ -27,6 +28,9 @@ class Home extends Component {
                     break
                 case "/results-page":
                     return <ResponsiveDrawer/>
+                    break
+                case "/success":
+                    return <SuccessPage/>
                     break
                 case "/*":
                     console.log(page)

@@ -22,10 +22,10 @@ export default function UserCard(props) {
   // console.log(props)
   return (
   <div onClick={()=>handleOnClick(props.contestant.id, props.contestant.group)} id={props.contestantId} className={`cursor-pointer elevated-card curved-corners nate-white-bg j-center a-center margin-t-10 margin-r-30  padding-auto  min-width-200 min-height-200`}>
-      <ButtonBase style={{width:200, height:200}}>
+      <ButtonBase style={{width:250, height:350}}>
               <div className={`d-flex f-column j-start a-center width-100-cent height-90-cent   curved-corners nate-white-bg `}>
                   <div className={` elevated-all round-up wrap-around margin-b-10`} >
-                      <Avatar alt={props.contestant.name} src={userProfile} style={{width:70, height:70, }} />
+                      <Avatar alt={props.contestant.name} src={props.contestant.image_url} style={{width:150, height:150, }} />
                   </div>
                   <div className={` d-flex f-column j-center a-center full-width full-height `}>
                       <span className={`text-info-holder margin-b-5`}><AccountCircleIcon style={{fill: "#1976D2", marginRight:3}}/>
@@ -35,7 +35,7 @@ export default function UserCard(props) {
                           {props.contestant.house}
                       </span>
                       <span className={`text-info-holder`}><ClassIcon style={{fill: "#1976D2",marginRight:3}}/>
-                          {`2A${props.contestant.id}`}
+                          {`${props.contestant.current_class}`}
                       </span>
                   </div>
               </div>

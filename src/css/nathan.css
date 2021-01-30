@@ -1561,3 +1561,8 @@ padding-l-2-cent{
 .above-all{
     z-index:500000;
 }
+
+/* No visible */
+.hide-visible{
+    visibility: hidden;
+}

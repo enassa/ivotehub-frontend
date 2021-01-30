@@ -84,7 +84,7 @@ class StudentDetails  extends Component {
                 votes:[],
                 currentEndPoint:1,
                 votesLength:0,
-                numberOfVotes:5
+                numberOfVotes:7,
          };
     }
      ejectContestants(contestantObject){
@@ -94,7 +94,7 @@ class StudentDetails  extends Component {
         });
       };
       getData(){
-        this.setState({loading:true})
+       
         axios.get(`https://murmuring-bastion-95773.herokuapp.com/api/contestants/${this.state.currentEndPoint}`)
                .then(resp => {
                      this.setState({contestantsLists:resp.data.slice(0,5), loading:false})
@@ -157,6 +157,7 @@ class StudentDetails  extends Component {
         // this.processVotes(vote,voteGroup)
     // }
     registerVote(contestantsId,voteGroup){
+        this.setState({loading:true})
         // console.log(contestantsId,voteGroup)
             axios.put(`https://murmuring-bastion-95773.herokuapp.com/api/contestants/${contestantsId}`)
                .then(resp => {
@@ -164,8 +165,17 @@ class StudentDetails  extends Component {
                     this.setState({activatedOption:this.state.activatedOption + 1}, ()=>{
                         this.setState({currentEndPoint:this.state.currentEndPoint + 1}, ()=>{
                             if(this.state.numberOfVotes==1){
-                                window.location.replace("https://desolate-eyrie-58648.herokuapp.com/")
-                            }
+                                axios.post(`https://murmuring-bastion-95773.herokuapp.com/api/voters-v/${localStorage.usersId}`)
+                                    .then(resp => {
+                                     if(resp.status == 200){
+                                        window.location.replace("https://ivotehub-frontend.web.app/success");
+                                        window.localStorage.clear();
+                                    }
+                                 })
+                                .catch(err => {
+                                            console.error(err);
+                                    });
+                                }
                             else{
                                 this.setState({numberOfVotes:this.state.numberOfVotes-1}, ()=>{
                                     console.log(resp)
@@ -185,12 +195,12 @@ class StudentDetails  extends Component {
     componentDidMount(){
          console.log(localStorage.verificationStatus)
         //  localStorage.verificationStatus = false;
-        if(localStorage.verificationStatus=="yes"){
+        // if(localStorage.verificationStatus=="yes"){
             this.getData()
-          }
-          else{
-            window.location.replace("https://desolate-eyrie-58648.herokuapp.com/")
-          }
+        //   }
+        //   else{
+            // window.location.replace("https://ivotehub-frontend.web.app")
+        //   }
     }
     render() { 
         return ( 

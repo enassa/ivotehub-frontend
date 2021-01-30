@@ -23,7 +23,7 @@ const store = createStore(rootReducer)
               <Switch>
                   <Route exact path="/student-details" component={Home} />
                   <Route exact path="/voting-page" component={Home} />
-                  <Route exact path="/success-page" component={Home} />
+                  <Route exact path="/success" component={Home} />
                   <Route exact path="/results-page" component={Home} />
                   <Route exact path="/hh454j5hg34h5g4" component={Home} />
                   <Route path="/:page/:sub_page" component={Verification} />

@@ -164,23 +164,35 @@ class ResponsiveDrawer  extends Component {
       group:2,
     },
     {
-      title:"Sanctions Prefect",
-      value:"Sanctions Prefect",
-      label:"Sanctions Prefect",
+      title:"Entertainment Prefect",
+      value:"Entertainment Prefect",
+      label:"Entertainment Prefect",
       group:3,
     },
     {
-      title:"Dinning Hall (East) Prefect",
-      value:"Dinning Hall (East) Prefect",
-      label:"Dinning Hall (East) Prefect",
+      title:"Dinning Hall Boys (East and West) ",
+      value:"Dinning Hall BOYS (East and West) ",
+      label:"Dinning Hall BOYS (East and West)",
       group:4,
     },
     {
-      title:"Dinning Hall (West) Prefect",
-      value:"Dinning Hall (West) Prefect",
-      label:"Dinning Hall (West) Prefect",
+      title:"Dinning Hall Girls (East and West) ",
+      value:"Dinning Hall Girls (East and West) ",
+      label:"Dinning Hall Girls (East and West)",
       group:5,
     },
+    {
+      title:"Sanctions Prefect Boys (East and West)",
+      value:"Sanctions Prefect Boys (East and West)",
+      label:"Sanctions Prefect Boys (East and West)",
+      group:6,
+    },
+    {
+      title:"Sanctions Prefect Girls (East and West)",
+      value:"Sanctions Prefect Girls (East and West)",
+      label:"Sanctions Prefect Girls (East and West)",
+      group:7,
+    }
 
   ]
   

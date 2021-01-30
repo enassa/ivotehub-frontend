@@ -32,8 +32,10 @@ class Verification  extends Component {
     VerificationSuccess(){
         this.setState({verifying:false})
         localStorage.setItem('verificationStatus', "yes")
+        localStorage.setItem('usersId', this.state.userInputs)
         console.log(localStorage.verificationStatus)
-        window.location.replace("https://desolate-eyrie-58648.herokuapp.com/hh454j5hg34h5g4")
+        console.log(localStorage.usersId)
+        window.location.replace("https://ivotehub-frontend.web.app/hh454j5hg34h5g4")
     }
     verifying(){
         this.setState({verifying:true})
@@ -52,6 +54,7 @@ class Verification  extends Component {
                     this.VerificationSuccess()
                     console.log("verificaion succes")
                 }
+              
                 else{
                     console.log("verificaion failed")
                 }
@@ -60,6 +63,12 @@ class Verification  extends Component {
             .catch(err => {
                 // Handle Error Here
                 console.error(err);
+                if(err.response.status==300){
+                    alert("You have already voted")
+                }
+                else{
+                    console.log(err.response.message)
+                }
             });
         }
     }
